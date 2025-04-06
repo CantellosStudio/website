@@ -1944,18 +1944,8 @@
           });
         }
       });
-      window.onpopstate = function (event) {
-        if (!event.state || event.state.page !== "servizi-offerti") {
-          // Restore initial (home) view
-          document.getElementById("new-screen").style.display = "none";
-          document.getElementById("vertical-container").style.display = "block";
-          document.getElementById("global-panels").style.display = "block";
-        } else {
-          // If needed, handle the servizi-offerti view explicitly here
-          document.getElementById("vertical-container").style.display = "none";
-          document.getElementById("global-panels").style.display = "none";
-          document.getElementById("new-screen").style.display = "block";
-        }
+      window.onpopstate = function () {
+        location.href = "/";
       };
     </script>
     <script>
